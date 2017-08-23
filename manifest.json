@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Instab",
+  "version": "1.0",
+  "description": "Replaces the Chrome default new tab page with the two most recent posts from any public Instagram account",
+
+	"browser_action": {
+    "default_icon": "./public/icon.png",
+		"default_popup": "./views/popup.html"
+  },
+
+	"permissions": ["http://instagram.com"]
+}
+
+
