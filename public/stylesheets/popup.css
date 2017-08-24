@@ -1,0 +1,30 @@
+body {
+    font-family: 'Khula', sans-serif;
+    width: 200px;
+    height: 100px;
+}
+
+img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin: 10px;
+}
+
+p {
+    overflow: auto;
+}
+
+#byme {
+    position: relative;
+    left: 110px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: hotPink;
+    text-decoration: none;
+}

@@ -1,3 +1,3 @@
-# Instab
+# Phototab
 
-Instab is a Chrome extension that replaces the default new tab page with the last most recent posts from any public Instagram account of choice.
+Phototab is a Chrome extension that replaces the default new tab page with the two most recent posts with any Instagram tag!
