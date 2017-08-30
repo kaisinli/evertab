@@ -1,0 +1,32 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+div {
+	height: 100%;
+	width: 50%;
+	margin: 0;
+}
+
+.left-image{
+  float: left;
+}
+
+.right-image{
+  float: right;
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+

@@ -6,7 +6,7 @@
 	"browser_action": {
 		"default_title": "Phototab",
 		"default_icon": "./public/icon.png",
-		"default_popup": "./views/popup.html"
+		"default_popup": "./public/popup.html"
 	},
 	"permissions": [
 		"http://instagram.com"
