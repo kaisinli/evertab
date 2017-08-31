@@ -1,4 +1,9 @@
-html, body, a {
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body, a, div {
   width: 100%;
   height: 100%;
 }
@@ -6,7 +11,6 @@ html, body, a {
 div {
 	height: 100%;
 	width: 50%;
-	margin: 0;
 }
 
 .left-image{
@@ -31,34 +35,13 @@ div {
 }
 
 .grayscale img, .grayscale video {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
-.grayscale:hover img, .grayscale:hover video {
 	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
 
-.caption {
-	position: relative;
-}
-.caption .text {
-		position: absolute;		
-    top: 95%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 10;
-    opacity: 0;
-    transition: all 0.8s ease;			
-}
-.caption .text h1 {		
-		margin: 0;		
-		color: white;
-		font-size: medium;
-}
-.caption:hover .text {
-	opacity: 1;
+.grayscale:hover img, .grayscale:hover video {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }

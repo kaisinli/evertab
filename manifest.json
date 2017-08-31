@@ -1,15 +1,16 @@
 {
 	"manifest_version": 2,
-	"name": "Phototab",
+	"name": "Evertab",
 	"version": "1.0",
-	"description": "Replaces the Chrome default new tab page with the two most recent posts from any public Instagram account",
+	"description": "Replaces the Chrome default new tab page with the two most recent top posts with any user-specified hashtag",
 	"browser_action": {
-		"default_title": "Phototab",
+		"default_title": "Evertab",
 		"default_icon": "./public/icon.png",
 		"default_popup": "./public/popup.html"
 	},
 	"permissions": [
-		"http://instagram.com"
+		"http://instagram.com",
+		"storage"
 	],
 	"chrome_url_overrides": {
 		"newtab": "./public/index.html"
