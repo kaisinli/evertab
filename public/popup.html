@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Khula:300">
-    <link rel='stylesheet' href='../public/stylesheets/popup.css'>
-  </head>
 
-  <title>Evertab</title>
+<head>
+  <!-- stylesheets -->
+  <link rel='stylesheet' href='../public/stylesheets/popup.css'>
+</head>
 
-  <body>
-    <img src="../public/icon.png">
-    <p>Open a new tab to see the two most recent top posts with</p>
-    <p id = "byme" >Evertab by <a href="https://www.instagram.com/kaisiedaisie/" target="blank">Kaisin</a></p>
-  </body>
+<title>Evertab</title>
+
+<body>
+  <img src="../public/icon.png">
+  <p>Open a new tab to see the most recent <b>#<i></i></b> top posts! Or change tag below:</p>
+
+  <div id="new-tag-form">
+    <form>
+      <input type="text" placeholder="New Hashtag">
+    </form>
+  </div>
+
+  <p id="byme">Evertab by <a href="https://www.instagram.com/kaisiedaisie/" target="blank">Kaisin</a></p>
+
+  <script src="./js/jquery-3.2.0.min.js"></script>
+  <script src="./js/popup.js"></script>
+</body>
+
 </html>

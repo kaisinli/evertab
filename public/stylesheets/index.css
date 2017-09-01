@@ -21,14 +21,14 @@ div {
   float: right;
 }
 
-.fill, a{
+.div, a{
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden
 }
 
-.fill img, .fill video {
+a img, a video {
     flex-shrink: 0;
 		min-width: 100%;
     min-height: 100%;

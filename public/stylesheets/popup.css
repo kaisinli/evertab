@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:30');
+
 body {
     font-family: 'Khula', sans-serif;
     width: 200px;
@@ -5,14 +7,47 @@ body {
 }
 
 img {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
     float: left;
-    margin: 10px;
+    margin-left:0; 
+    margin-top: 0;
+    margin-right: 5px;
 }
 
-p {
+div, p {
     overflow: auto;
+}
+
+#new-tag-form {
+    width: 100%;
+}
+
+form {
+    justify-content: center;
+}
+
+input {
+  background-color: white;
+  border-radius: 0.3em;
+  border: 2px solid lightgray;
+  box-sizing: border-box;
+  min-width: 15em;
+  outline: none;
+  padding: 0.6em;
+  width: 100%;
+}
+
+input:hover {
+  border-color: silver;
+}
+
+input:focus {
+  border-color: salmon;
+}
+
+b {
+  color: salmon;
 }
 
 #byme {
@@ -25,6 +60,6 @@ a {
 }
 
 a:hover {
-    color: hotPink;
+    color: salmon;
     text-decoration: none;
 }
