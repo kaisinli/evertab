@@ -1,11 +1,10 @@
 var storage = window.localStorage;
 
 $(document).ready(function () {
+    var currentTag = storage.getItem('currentTag');
+    $('i').text(currentTag)
 
-    //fetch from local storage
-    $('i').text(storage.getItem('currentTag'))
-
-    //new tag
+    //user inputs new tag
     $('input').keyup(
         function (e) {
             if (e.keyCode === 13) {
@@ -22,4 +21,3 @@ $(document).ready(function () {
     });
 
 })
-

@@ -6,3 +6,5 @@ package-lock.json
 secrets.js
 
 .DS_Store
+
+bundle.js

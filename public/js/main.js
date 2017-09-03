@@ -1,7 +1,15 @@
-// var appUrl = 'https://api.instagram.com/v1/tags/cutecats/media/recent';
+import INSTAGRAM_CLIENT_ID from '../../secret.js'
+var redirectUri = 'http://localhost';
+var storage = window.localStorage;
 
 $(document).ready(function () {
-    //fetch from local storage
-    $('h1').text(window.localStorage.getItem("currentTag"))
-})
+    var currentTag = storage.getItem('currentTag');
+    
+    if (storage.getItem('accessToken') === null) {
+        $('body')
+            .addClass ('not-authenticated')
+            .append('<div class = "intro-page"></div>')
+                
 
+    }
+})

@@ -21,14 +21,14 @@ div {
   float: right;
 }
 
-.div, a{
+.div, a {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden
 }
 
-a img, video {
+a img, a video {
     flex-shrink: 0;
 		min-width: 100%;
     min-height: 100%;
@@ -44,4 +44,24 @@ a img, video {
 	filter: grayscale(100%);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
+}
+
+.btn-instagram{
+    color:#fff;
+    background-color:#3f729b;
+    border-color:rgba(0,0,0,0.2)
+}
+
+.not-authenticated {
+  background-color: #fda09e;
+}
+
+.intro-page {
+  background:white;
+  border-radius: 50px;
+  width: 40%;
+  height: 70%;
+   margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
