@@ -9,7 +9,5 @@ $(document).ready(function () {
         $('body')
             .addClass ('not-authenticated')
             .append('<div class = "intro-page"></div>')
-                
-
     }
 })
