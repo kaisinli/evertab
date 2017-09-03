@@ -1,21 +1,25 @@
-// fetches user input
-
+var storage = window.localStorage;
 
 $(document).ready(function () {
 
-    $("form").submit(function (e) {
-        var currentInput = $('input').val();
-        $("i").text(currentInput);
-        e.preventDefault();
-    });
+    //fetch from local storage
+    $('i').text(storage.getItem('currentTag'))
 
-    $("input").keyup(
+    //new tag
+    $('input').keyup(
         function (e) {
-            var currentInput = $(this).val();
             if (e.keyCode === 13) {
-                $("form").submit();
+                $('form').submit();
             }
         }
     );
-    
+
+    $('form').submit(function (e) {
+        var currentInput = $('input').val().replace(/\s+/g, '');
+        storage.setItem('currentTag', currentInput);
+        $('i').text(storage.getItem('currentTag'));
+        e.preventDefault();
+    });
+
 })
+

@@ -13,11 +13,11 @@ div {
 	width: 50%;
 }
 
-.left-image{
+.left-content{
   float: left;
 }
 
-.right-image{
+.right-content{
   float: right;
 }
 
@@ -28,7 +28,7 @@ div {
     overflow: hidden
 }
 
-a img, a video {
+a img, video {
     flex-shrink: 0;
 		min-width: 100%;
     min-height: 100%;
