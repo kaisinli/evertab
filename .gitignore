@@ -3,8 +3,9 @@ node_modules
 package.json
 package-lock.json
 
-secrets.js
+secret.js
 
 .DS_Store
 
 bundle.js
+webpack.config.js
