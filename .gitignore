@@ -3,7 +3,7 @@ node_modules
 package.json
 package-lock.json
 
-secret.js
+secrets.js
 
 .DS_Store
 

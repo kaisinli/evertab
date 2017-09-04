@@ -1,4 +1,4 @@
-import INSTAGRAM_CLIENT_ID from '../../secret.js'
+import INSTAGRAM_CLIENT_ID from '../../secrets.js'
 var redirectUri = 'http://localhost';
 var storage = window.localStorage;
 
