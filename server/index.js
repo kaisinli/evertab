@@ -11,7 +11,7 @@ app.use('/', bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')))
 
 app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public'))
+    res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
 app.listen(3000, () => console.log('Listening on port 3000'))

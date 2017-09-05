@@ -46,22 +46,118 @@ a img, a video {
 	transition: .3s ease-in-out;
 }
 
-.btn-instagram{
-    color:#fff;
-    background-color:#3f729b;
-    border-color:rgba(0,0,0,0.2)
-}
-
-.not-authenticated {
-  background-color: #fda09e;
+.no-accesstoken-or-handle{
+  background-color:#2a2a2a;
+  align-items:center;
+  display:flex;
 }
 
 .intro-page {
-  background:white;
-  border-radius: 50px;
-  width: 40%;
-  height: 70%;
-   margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  background:salmon;
+  border-width: 5px;
+  border-radius: 20px;
+  padding: 30px;
+  width: 400px;
+  height: 450px;
+  min-width: 300px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+h1, h2, h3{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+#new-handle-form {
+  width: 90%;
+  margin: 0 auto;
+  height: 320px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  background-color: white;
+  border-radius: 0.3em;
+  border: 2px solid lightgray;
+  box-sizing: border-box;
+  min-width: 15em;
+  outline: none;
+  padding: 0.6em;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input:hover {
+  border-color: gray;
+}
+
+input:focus {
+  border-color: salmon;
+}
+
+button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  color:white;
+  display: block;
+  font-size: 15px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+
+button img, button div{
+  height: 30px;
+  padding: 0;
+  float: left;
+}
+
+button img {
+  margin: 5px 5px 5px 20px;
+}
+
+button div {
+  width: 300px;
+  margin: 5px 0px 5px 0px;
+  line-height: 27px;
+}
+
+#btn-text {
+  float: right;
+}
+
+p, #disclaimer {
+  font-size: 19px;
+  color: white;
+  text-align: center;
+}
+
+br {
+  line-height: 100px;
+}
+
+#disclaimer {
+  font-size: 15px;
 }
