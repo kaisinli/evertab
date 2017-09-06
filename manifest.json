@@ -10,7 +10,10 @@
 	},
 	"permissions": [
 		"http://www.instagram.com",
-		"storage"
+		"storage",
+		"http",
+		"tabs",
+		"activeTab"
 	],
 	"chrome_url_overrides": {
 		"newtab": "./public/index.html"

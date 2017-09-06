@@ -1,30 +1,89 @@
-@import url('https://fonts.googleapis.com/css?family=Khula:30');
-
-body {
-    font-family: 'Khula', sans-serif;
-    width: 200px;
-    height: 100px;
+* {
+	margin: 0;
+	padding: 0;
 }
 
-img {
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin-left:0; 
-    margin-top: 0;
-    margin-right: 5px;
+html, body, a, div {
+  width: 100%;
+  height: 100%;
 }
 
-div, p {
-    overflow: auto;
+div {
+	height: 100%;
+	width: 50%;
 }
 
-#new-tag-form {
-    width: 100%;
+.left-content{
+  float: left;
+}
+
+.right-content{
+  float: right;
+}
+
+.div, a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+a img, a video {
+    flex-shrink: 0;
+		min-width: 100%;
+    min-height: 100%;
+}
+
+.grayscale img, .grayscale video {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.grayscale:hover img, .grayscale:hover video {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.intro-page {
+  background:salmon;
+  padding: 15px;
+  width: 200px;
+  height: 225px;
+  margin: 0 auto;
+}
+
+h1, h2, h3{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 10.5px;
+  margin-bottom: 2.5px;
+}
+
+#new-handle-form {
+  width: 90%;
+  margin: 0 auto;
+  height: 80px;
 }
 
 form {
-    justify-content: center;
+  margin-bottom: 10px;
 }
 
 input {
@@ -36,30 +95,71 @@ input {
   outline: none;
   padding: 0.6em;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 input:hover {
-  border-color: silver;
+  border-color: gray;
 }
 
 input:focus {
   border-color: salmon;
 }
 
-b {
-  color: salmon;
+button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  color:white;
+  display: block;
+  font-size: 7.5px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
-#byme {
-    position: relative;
-    left: 95px;
+button img, button div{
+  height: 15px;
+  padding: 0;
+  float: left;
 }
 
-a {
-    text-decoration: none;
+button img {
+  margin: 2.5px 2.5px 2.5px 10px;
 }
 
-a:hover {
-    color: salmon;
-    text-decoration: none;
+button div {
+  width: 150px;
+  margin: 2.5px 0px 2.5px 0px;
+  float: right;
+}
+
+button div p { 
+  font-size: 10px;
+  width: 100%;
+}
+
+#btn-text {
+  float: right;
+}
+
+p, #disclaimer {
+  font-size: 10px;
+  color: white;
+  text-align: center;
+}
+
+br {
+  line-height: 10px;
+}
+
+#disclaimer {
+  font-size: 8px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
 }

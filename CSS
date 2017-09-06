@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:30');
+
+body {
+    font-family: 'Khula', sans-serif;
+    width: 200px;
+    height: 100px;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-left:0; 
+    margin-top: 0;
+    margin-right: 5px;
+}
+
+div, p {
+    overflow: auto;
+}
+
+#new-tag-form {
+    width: 100%;
+}
+
+form {
+    justify-content: center;
+}
+
+input {
+  background-color: white;
+  border-radius: 0.3em;
+  border: 2px solid lightgray;
+  box-sizing: border-box;
+  min-width: 15em;
+  outline: none;
+  padding: 0.6em;
+  width: 100%;
+}
+
+input:hover {
+  border-color: silver;
+}
+
+input:focus {
+  border-color: salmon;
+}
+
+b {
+  color: salmon;
+}
+
+#byme {
+    position: relative;
+    left: 95px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: salmon;
+    text-decoration: none;
+}
