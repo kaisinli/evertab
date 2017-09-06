@@ -9,10 +9,8 @@
 		"default_popup": "./public/popup.html"
 	},
 	"permissions": [
-		"http://www.instagram.com",
 		"storage",
 		"http",
-		"tabs",
 		"activeTab"
 	],
 	"chrome_url_overrides": {

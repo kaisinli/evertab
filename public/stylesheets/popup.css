@@ -68,7 +68,7 @@ h1 {
 
 h2 {
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 h3 {
@@ -162,4 +162,9 @@ br {
 a{
   color: white;
   text-decoration: none;
+}
+
+#step-two {
+  margin-top: 10px;
+  justify-content: center:
 }
