@@ -17,13 +17,13 @@ $(document).ready(function () {
                 var domainPathAndFrag = currentTabUrl.slice(0, 57);
 
                 if (domainPathAndFrag !== ATFragmentInUrl) {
-                    $("#step-two").remove();
                     $("#new-handle-form").remove();
                     $('a').attr('href', authLink);
                 } else {
                     $("#step-one").remove();
                     $('form')
                         .submit(function (e) {
+                            console.log('SUBMIT', e)
                             var newHandleOne = $('#handle-one').val();
                             storage.setItem('handleOne', newHandleOne);
                             var newHandleTwo = $('#handle-two').val();
@@ -35,6 +35,7 @@ $(document).ready(function () {
             })
     } else {
         $('button').remove();
+        $('#submit-handles').remove();
         $('form')
             .submit(function (e) {
                 var newHandleOne = $('#handle-one').val();
