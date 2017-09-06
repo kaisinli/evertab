@@ -1,15 +1,10 @@
-import authLink from '../../secrets.js'
-
 $(document).ready(function () {
     var handleOne = storage.getItem('handleOne');
     var handleTwo = storage.getItem('handleTwo');
+    var accessToken = storage.getItem('accessToken');
 
-    $('form')
-        .submit(function (e) {
-            var newHandleOne = $('#handle-one').val();
-            storage.setItem('handleOne', newHandleOne);
-            var newHandleTwo = $('#handle-two').val();
-            storage.setItem('handleTwo', newHandleTwo);
-        })
+   if (accessToken === null){
+       $('body').addClass()
+   }
 
 })

@@ -28,24 +28,6 @@ div {
     overflow: hidden
 }
 
-a img, a video {
-    flex-shrink: 0;
-		min-width: 100%;
-    min-height: 100%;
-}
-
-.grayscale img, .grayscale video {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
-}
-
-.grayscale:hover img, .grayscale:hover video {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
 .intro-page {
   background:salmon;
   padding: 15px;
@@ -73,13 +55,13 @@ h2 {
 
 h3 {
   font-size: 10.5px;
-  margin-bottom: 2.5px;
+  margin-bottom: 18px;
 }
 
 #new-handle-form {
   width: 90%;
   margin: 0 auto;
-  height: 80px;
+  height: 120px;
 }
 
 form {
@@ -149,7 +131,7 @@ p, #disclaimer {
   font-size: 10px;
   color: white;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 br {
@@ -157,7 +139,7 @@ br {
 }
 
 #disclaimer {
-  font-size: 8px;
+  font-size: 9px;
 }
 
 a{
@@ -165,7 +147,14 @@ a{
   text-decoration: none;
 }
 
+#step-one {
+  margin-top: 30px;
+  justify-content: center;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
 #step-two {
   margin-top: 10px;
-  justify-content: center:
+  justify-content: center;
 }

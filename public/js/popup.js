@@ -35,7 +35,6 @@ $(document).ready(function () {
             })
     } else {
         $('button').remove();
-        $('#submit-handles').remove();
         $('form')
             .submit(function (e) {
                 var newHandleOne = $('#handle-one').val();

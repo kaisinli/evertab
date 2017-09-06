@@ -10,8 +10,8 @@
 	},
 	"permissions": [
 		"storage",
-		"http",
-		"activeTab"
+		"activeTab",
+		"tabs"
 	],
 	"chrome_url_overrides": {
 		"newtab": "./public/index.html"
