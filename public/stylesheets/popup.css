@@ -13,14 +13,6 @@ div {
 	width: 50%;
 }
 
-.left-content{
-  float: left;
-}
-
-.right-content{
-  float: right;
-}
-
 .div, a {
     display: flex;
     justify-content: center;

@@ -13,11 +13,11 @@ div {
 	width: 50%;
 }
 
-.left-content{
+#left-content{
   float: left;
 }
 
-.right-content{
+#right-content{
   float: right;
 }
 
@@ -46,23 +46,25 @@ a img, a video {
 	transition: .3s ease-in-out;
 }
 
-.no-accesstoken-or-handle{
-   background-color:#2a2a2a;
-   align-items:center;
-   display:flex;
-  }
-  
- .not-authenticated {
-   background-color: #fda09e;
- }
- .intro-page {
-   background:salmon;
-   border-width: 5px;
-   border-radius: 20px;
-   padding: 30px;
-   width: 400px;
-   height: 450px;
-   min-width: 300px;
-   min-height: 400px;
-   margin: 0 auto;
-  }
+.intro-page {
+  background:salmon;
+  border-width: 5px;
+  border-radius: 20px;
+  padding: 30px;
+  width: 400px;
+  height: 400px;
+  min-width: 300px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.not-authenticated {
+  background-color:#2a2a2a;
+  align-items:center;
+  display:flex;
+}
+
+h1 {
+    font-size: 70px;
+    color: white;
+}

@@ -1,6 +1,10 @@
 {
 	"manifest_version": 2,
 	"name": "Evertab",
+	"content_scripts": [{
+     "js": ["./public/js/jquery-3.2.0.min.js"],
+	 "matches": ["http://*/*", "https://*/*"]
+   }],
 	"version": "1.0",
 	"description": "Replaces the Chrome default new tab page with the two most recent top posts with any user-specified hashtag",
 	"browser_action": {
@@ -13,6 +17,9 @@
 		"activeTab",
 		"tabs"
 	],
+
+	"content_security_policy": "script-src 'self', object-src 'self'",
+
 	"chrome_url_overrides": {
 		"newtab": "./public/index.html"
 	},
