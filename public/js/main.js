@@ -16,10 +16,17 @@ $(document).ready(function () {
     } else {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
-
-        $(function () {
-            
-
+        $.ajax({
+            url: `https://api.instagram.com/v1/users/1461554942/media/recent`, 
+            dataType: 'jsonp',
+            type: 'GET',
+            data: { access_token: accessToken, count: 1 },
+            success: function (data) {
+                console.log('success',data.data);
+            },
+            error: function (data) {
+                console.log(data); // send the error notifications to console
+            }
         })
     }
 });
