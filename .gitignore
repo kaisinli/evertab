@@ -7,5 +7,6 @@ secrets.js
 
 .DS_Store
 
-bundle.js
+popup.bundle.js
+index.bundle.js
 webpack.config.js
