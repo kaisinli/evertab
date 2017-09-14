@@ -60,15 +60,99 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return displayOneOnLeft; });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(2);
+
+
+
+var storage = window.localStorage;
+var handle0 = storage.getItem('handle0');
+var handle1 = storage.getItem('handle1');
+
+
+$(document).ready(function () {
+    if (handle0 === null) {
+        $('#div0').remove();
+        $('#div1').remove();
+        $('body').addClass('not-authenticated');
+    } else if (handle1 === null || handle1 === '' || handle0 === handle1) {
+        $('.intro-page').remove();
+        $('body').removeClass('not-authenticated');
+        $.getJSON(`https://www.instagram.com/${handle0}/media/`, function (data) {
+            console.log(data)
+            var content = data.items;
+
+            for (var i = 0; i < 2; i++) {
+                var igUrl = content[i].link;
+                var contentUrl = '';
+
+                if (content[i].videos) {
+                    contentUrl = content[i].videos.standard_resolution.url;
+                    console.log(i, contentUrl)
+                    $('#content' + i).attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
+                } else {
+                    contentUrl = content[i].images.standard_resolution.url;
+                    console.log(i, contentUrl)
+                    $('#content' + i).attr('href', igUrl).append(`<img src = ${contentUrl}>`)
+                }
+            }
+        })
+    } else {
+        $('.intro-page').remove();
+        $('body').removeClass('not-authenticated');
+
+        $.getJSON(`https://www.instagram.com/${handle0}/media/`, function (data) {
+            var content = data.items
+            var igUrl = content[0].link;
+
+            var contentUrl = ''
+            var ig
+            if (content[0].videos) {
+                contentUrl = content[0].videos.standard_resolution.url;
+                $('#content0').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
+            } else {
+                contentUrl = content[0].images.standard_resolution.url;
+                $('#content0').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
+            }
+        })
+
+        $.getJSON(`https://www.instagram.com/${handle1}/media/`, function (data) {
+            var content = data.items
+            var contentUrl = ''
+            var igUrl = content[0].link;
+
+
+            if (content[0].videos) {
+                contentUrl = content[0].videos.standard_resolution.url;
+                $('#content1').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
+            } else {
+                contentUrl = content[0].images.standard_resolution.url;
+                $('#content1').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
+            }
+        })
+
+
+    }
+})
+
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export displayOneOnLeft */
 /* unused harmony export displayOneOnright */
 /* unused harmony export handleCarouselMedia */
 var displayMul = function (data, index) {
@@ -106,120 +190,8 @@ var displayOneOnright = function (data, index) {
 
 var handleCarouselMedia = function(data){}
 
-/* harmony default export */ __webpack_exports__["a"] = (displayMul);
+/* unused harmony default export */ var _unused_webpack_default_export = (displayMul);
 
-
-
-/***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(0);
-
-
-
-
-
-var storage = window.localStorage;
-var accessToken = storage.getItem('accessToken');
-
-$(document).ready(function () {
-    var handleOne = storage.getItem('handleOne');
-    var handleTwo = storage.getItem('handleTwo');
-    var accessToken = storage.getItem('accessToken');
-
-    if (accessToken === null) {
-        $('#div0').remove();
-        $('#div1').remove();
-        $('body').addClass('not-authenticated');
-    } else if (handleTwo === null || handleTwo === '' || handleOne === handleTwo) {
-        $('.intro-page').remove();
-        $('body').removeClass('not-authenticated');
-
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/search',
-            dataType: 'jsonp',
-            type: 'GET',
-            data: { access_token: accessToken, q: handleOne },
-
-            success: function (data) {
-                console.log('=== FOUND USER ID', data)
-                $.ajax({
-                    url: `https://api.instagram.com/v1/users/${data.data[0].id}/media/recent`,
-                    dataType: 'jsonp',
-                    type: 'GET',
-                    data: { access_token: accessToken, count: 2 },
-                    success: function (data) {
-                        console.log(data)
-                        var data = data.data;
-
-                        for (var i = 0; i < 2; i++) {
-                            Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* default */])(data, i)
-                        }
-                    },
-                    error: function (data) {
-                        console.log(data);
-                    }
-                });
-            },
-            error: function (data) {
-                console.log(data)
-            }
-        })
-
-    } else {
-        $('.intro-page').remove();
-        $('body').removeClass('not-authenticated');
-
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/search',
-            dataType: 'jsonp',
-            type: 'GET',
-            data: { access_token: accessToken, q: handleOne },
-            success: function (data) {
-                $.ajax({
-                    url: `https://api.instagram.com/v1/users/${data.data[0].id}/media/recent`,
-                    dataType: 'jsonp',
-                    type: 'GET',
-                    data: { access_token: accessToken, count: 1 },
-                    success: function (data) {
-                        var data = data.data;
-                        Object(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* displayOneOnLeft */])(data, null)
-                    },
-                    error: function (data) {
-                        console.log(data)
-                    }
-                })
-            }
-        })
-
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/search',
-            dataType: 'jsonp',
-            type: 'GET',
-            data: { access_token: accessToken, q: handleTwo },
-            success: function (data) {
-                $.ajax({
-                    url: `https://api.instagram.com/v1/users/${data.data[0].id}/media/recent`,
-                    dataType: 'jsonp',
-                    type: 'GET',
-                    data: { access_token: accessToken, count: 1 },
-                    success: function (data) {
-                        var data = data.data;
-                        Object(__WEBPACK_IMPORTED_MODULE_0__utils__["displayOneOnRight"])(data, null)
-                    },
-                    error: function (data) {
-                        console.log(data)
-                    }
-                })
-            }
-        })
-    }
-})
 
 
 /***/ })

@@ -60,76 +60,30 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__secrets_js__ = __webpack_require__(2);
-
-var redirectUri = 'https://www.instagram.com/evertabextension/';
-var authLink = `https://api.instagram.com/oauth/authorize/?client_id=${__WEBPACK_IMPORTED_MODULE_0__secrets_js__["a" /* default */]}&redirect_uri=${redirectUri}&response_type=token`;
+/* 0 */
+/***/ (function(module, exports) {
 
 var storage = window.localStorage;
 
 $(document).ready(function () {
-    var handleOne = storage.getItem('handleOne');
-    var handleTwo = storage.getItem('handleTwo');
-    var accessToken = storage.getItem('accessToken');
+    var handle0 = storage.getItem('handle0');
+    var handle1 = storage.getItem('handle1');
 
-    if (accessToken === null) {
-        chrome.tabs.query({ active: true, currentWindow: true },
-            function isATInUrl(tabs) {
-                var currentTabUrl = tabs[0].url;
-                var ATFragmentInUrl = redirectUri + '#access_token=';
-                var domainPathAndFrag = currentTabUrl.slice(0, 57);
+    $('form')
+        .submit(function () {
+            var newHandle0 = $('#handle0').val();
+            storage.setItem('handle0', newHandle0);
+            var newHandle1 = $('#handle1').val();
 
-                if (domainPathAndFrag !== ATFragmentInUrl) {
-                    $("#new-handle-form").remove();
-                    $('a').attr('href', authLink);
-                } else {
-                    $("#step-one").remove();
-                    $('form')
-                        .submit(function (e) {
-                            console.log('SUBMIT', e)
-                            var newHandleOne = $('#handle-one').val();
-                            storage.setItem('handleOne', newHandleOne);
-                            var newHandleTwo = $('#handle-two').val();
-                            storage.setItem('handleTwo', newHandleTwo);
-                            var accessToken = currentTabUrl.slice(57, currentTabUrl.length);
-                            storage.setItem('accessToken', accessToken);
-                        });
-                }
-            })
-    } else {
-        $('button').remove();
-        $('form')
-            .submit(function (e) {
-                var newHandleOne = $('#handle-one').val();
-                storage.setItem('handleOne', newHandleOne);
-                var newHandleTwo = $('#handle-two').val();
-                storage.setItem('handleTwo', newHandleTwo);
-            });
-    }
+            if (handle1 && newHandle1 === null)
+                storage.setItem('handle1', handle1);
+        });
 })
 
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export INSTAGRAM_CLIENT_SECRET */
-/* unused harmony export INSTAGRAM_CLIENT_ID */
-var INSTAGRAM_CLIENT_SECRET = 'dfe59781ff3340f0ae2d478e3826a4d3';
-var INSTAGRAM_CLIENT_ID = '56a28f40e0064d65b1c3ca02fc1f4111';
-
-/* harmony default export */ __webpack_exports__["a"] = (INSTAGRAM_CLIENT_ID);
 
 /***/ })
 /******/ ]);

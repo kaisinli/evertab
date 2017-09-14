@@ -23,27 +23,6 @@ app.get('*', function (req, res) {
 //listen
 app.listen(3000, () => console.log('Listening on port 3000'))
 
-//new Instagram client
-const instagram = new Instagram({
-    clientId: INSTAGRAM_CLIENT_ID,
-    clientSecret: INSTAGRAM_CLIENT_SECRET,
-    accessToken
-});
 
-app.get('/auth/instagram', (req, res, next) => {
-  res.redirect(instagram.getAuthorizationUrl(redirectUri, {
-    scope: ['basic', 'public-content'] },
-  ));
-});
-
-app.get('/auth/instagram/callback', async (req, res) => {
-  try {
-    const code = req.query.code;
-    const data = await instagram.authorizeUser(code, redirectUri);
-    res.json(data);
-  } catch (err) {
-    res.json(err);
-  }
-});
 
 module.exports = app;
