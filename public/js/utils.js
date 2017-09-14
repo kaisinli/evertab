@@ -33,5 +33,5 @@ export var displayOneOnright = function (data, index) {
 
 export var handleCarouselMedia = function(data){}
 
-export default displayContent;
+export default displayMul;
 

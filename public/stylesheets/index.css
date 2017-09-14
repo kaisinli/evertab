@@ -23,11 +23,11 @@ div {
   min-height: 100%;
 }
 
-.div0, .content0 {
+#div0, .content0 {
   float: left;
 }
 
-.div1, .content1 {
+#div1, .content1 {
   float: right;
 }
 
@@ -43,15 +43,11 @@ div {
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-
-.no-accesstoken-or-handle{
-   background-color:#2a2a2a;
-   align-items:center;
-   display:flex;
-  }
   
  .not-authenticated {
-   background-color: #fda09e;
+     background-color:#2a2a2a;
+   align-items:center;
+   display:flex;
  }
  .intro-page {
    background:salmon;
@@ -64,3 +60,8 @@ div {
    min-height: 400px;
    margin: 0 auto;
   }
+
+h1 {
+  font-size: 74px;
+  color: white;
+}

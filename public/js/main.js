@@ -1,4 +1,7 @@
-import { displayMul, displayOneOnLeft, displayOneOnRight } from './utils'
+'use strict'
+
+import { displayOneOnLeft, displayOneOnRight } from './utils'
+import displayMul from './utils'
 
 var storage = window.localStorage;
 var accessToken = storage.getItem('accessToken');
@@ -9,8 +12,8 @@ $(document).ready(function () {
     var accessToken = storage.getItem('accessToken');
 
     if (accessToken === null) {
-        $('#left-content').remove();
-        $('#right-content').remove();
+        $('#div0').remove();
+        $('#div1').remove();
         $('body').addClass('not-authenticated');
     } else if (handleTwo === null || handleTwo === '' || handleOne === handleTwo) {
         $('.intro-page').remove();
