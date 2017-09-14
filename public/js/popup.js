@@ -8,9 +8,13 @@ $(document).ready(function () {
         .submit(function () {
             var newHandle0 = $('#handle0').val();
             storage.setItem('handle0', newHandle0);
-            var newHandle1 = $('#handle1').val();
 
-            if (handle1 && newHandle1 === null)
-                storage.setItem('handle1', handle1);
-        });
+            var newHandle1 = $('#handle1').val();
+            var newHandle1NotValid = (newHandle1 === null || newHandle1 === '')
+            if (newHandle1NotValid === true) {
+                storage.setItem('handle1', handle1)
+            } else {
+                storage.setItem('handle1', newHandle1);
+            }
+        })
 })
