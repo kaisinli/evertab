@@ -1,17 +1,17 @@
 'use strict'
 
-import displayMul from './utils'
 var storage = window.localStorage;
 var handle0 = storage.getItem('handle0');
 var handle1 = storage.getItem('handle1');
 
+console.log(handle0, handle1)
 
 $(document).ready(function () {
     if (handle0 === null) {
         $('#div0').remove();
         $('#div1').remove();
         $('body').addClass('not-authenticated');
-    } else if (handle1 === null || handle1 === '' || handle0 === handle1) {
+    } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
         $.getJSON(`https://www.instagram.com/${handle0}/media/`, function (data) {

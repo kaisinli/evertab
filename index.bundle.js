@@ -60,31 +60,29 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
+
+/***/ 6:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(2);
-
 
 
 var storage = window.localStorage;
 var handle0 = storage.getItem('handle0');
 var handle1 = storage.getItem('handle1');
 
+console.log(handle0, handle1)
 
 $(document).ready(function () {
     if (handle0 === null) {
         $('#div0').remove();
         $('#div1').remove();
         $('body').addClass('not-authenticated');
-    } else if (handle1 === null || handle1 === '' || handle0 === handle1) {
+    } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
         $.getJSON(`https://www.instagram.com/${handle0}/media/`, function (data) {
@@ -147,52 +145,6 @@ $(document).ready(function () {
 
 
 
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export displayOneOnLeft */
-/* unused harmony export displayOneOnright */
-/* unused harmony export handleCarouselMedia */
-var displayMul = function (data, index) {
-    var contentUrl = '';
-
-    var igUrl = data[index].link;
-    if (data[index].videos) {
-        contentUrl = data[index].videos.standard_resolution.url;
-        $('#content' + index).attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
-    } else {
-        contentUrl = data[i].images.standard_resolution.url;
-        $('#content' + index).attr('href', igUrl).append(`<img src = ${contentUrl}>`)
-    }
-}
-
-var displayOneOnLeft = function (data, index) {
-    var contentUrl = data[0].videos.standard_resolution.url;;
-    var igUrl = data[0].link;
-    if (data[0].videos) {
-        $('#content0').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
-    } else {
-        $('#content0').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
-    }
-}
-
-var displayOneOnright = function (data, index) {
-    var contentUrl = data[0].videos.standard_resolution.url;;
-    var igUrl = data[0].link;
-    if (data[0].videos) {
-        $('#content1').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
-    } else {
-        $('#content1').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
-    }
-}
-
-var handleCarouselMedia = function(data){}
-
-/* unused harmony default export */ var _unused_webpack_default_export = (displayMul);
-
-
-
 /***/ })
-/******/ ]);
+
+/******/ });
