@@ -10,3 +10,4 @@ secrets.js
 popup.bundle.js
 index.bundle.js
 webpack.config.js
+bundle.js
