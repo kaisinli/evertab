@@ -10,7 +10,9 @@ $(document).ready(function () {
     if (handle0 === null) {
         $('#div0').remove();
         $('#div1').remove();
-        $('body').addClass('not-authenticated');
+        $('body')
+        .addClass('not-authenticated')
+        .append('<div class="intro-page"><h1>Please click the Evertab icon to begin.</h1></div>');
     } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');

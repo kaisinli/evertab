@@ -5,8 +5,8 @@
      "js": ["./public/js/jquery-3.2.0.min.js"],
 	 "matches": ["http://*/*", "https://*/*"]
    }],
-	"version": "1.0",
-	"description": "Replaces the Chrome default new tab page with the two most recent top posts with any user-specified hashtag",
+	"version": "1.2",
+	"description": "Evertab puts Instagram pictures on Chrome new tab page. ",
 	"browser_action": {
 		"default_title": "Evertab",
 		"default_icon": "./public/icon.png",
