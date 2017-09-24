@@ -1,6 +1,7 @@
-* {
-	margin: 0;
-	padding: 0;
+html, body {
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
 }
 
 html, body, div {
@@ -24,7 +25,7 @@ div {
   background:salmon;
   padding: 15px;
   width: 200px;
-  height: 250px;
+  height: 260px;
   margin: 0 auto;
 }
 
@@ -58,16 +59,16 @@ h3 {
 
 form {
   margin-bottom: 10px;
+  width: 100%;
 }
 
 input {
   background-color: white;
-  border-radius: 0.3em;
+  border-radius: 1px;
   border: 2px solid lightgray;
   box-sizing: border-box;
-  min-width: 15em;
   outline: none;
-  padding: 0.6em;
+  padding: 6px;
   width: 100%;
   margin-bottom: 5px;
 }
@@ -78,41 +79,6 @@ input:hover {
 
 input:focus {
   border-color: salmon;
-}
-
-button {
-  background: none;
-  border: 1px solid white;
-  border-radius: 5px;
-  color:white;
-  display: block;
-  font-size: 7.5px;
-  margin: 0 auto;
-  width: 100%;
-  align-items: center;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-button img, button div{
-  height: 15px;
-  padding: 0;
-  float: left;
-}
-
-button img {
-  margin: 2.5px 2.5px 2.5px 10px;
-}
-
-button div {
-  width: 150px;
-  margin: 2.5px 0px 2.5px 0px;
-  float: right;
-}
-
-button div p { 
-  font-size: 10px;
-  width: 100%;
 }
 
 #btn-text {
@@ -135,7 +101,7 @@ font-size: 9px;
 }
 
 #disclaimer {
-  font-size: 8px;
+  font-size: 9px;
 }
 
 a{
