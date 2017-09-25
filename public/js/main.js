@@ -11,9 +11,10 @@ $(document).ready(function () {
         $('#div0').remove();
         $('#div1').remove();
         $('body')
-        .addClass('not-authenticated')
-        .append('<div class="intro-page"><h1>Please click the Evertab icon to begin.</h1></div>');
+            .addClass('not-authenticated')
+            .append('<div class="intro-page"><h1>Please click the Evertab icon to begin.</h1></div>');
     } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
+        console.log('WHAT I WANT')
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
         $.getJSON(`https://www.instagram.com/${handle0}/media/`, function (data) {
@@ -59,7 +60,6 @@ $(document).ready(function () {
             var contentUrl = ''
             var igUrl = content[0].link;
 
-
             if (content[0].videos) {
                 contentUrl = content[0].videos.standard_resolution.url;
                 $('#content1').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
@@ -68,9 +68,5 @@ $(document).ready(function () {
                 $('#content1').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
             }
         })
-
-
     }
 })
-
-
