@@ -34,7 +34,8 @@ $(document).ready(function () {
                     })
                 } else {
                     contentUrl = content[i].thumbnail_src;
-                    $('#content' + i).attr('href', igUrl).append(`<img src = ${contentUrl}>`)
+                    $('#content' + i).attr('href', igUrl).append(`<img src = ${contentUrl}>`);
+                    indexHolder.shift()
                 }
                 
             }
