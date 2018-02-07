@@ -14,13 +14,6 @@ div {
 	width: 50%;
 }
 
-.div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden
-}
-
 .intro-page {
   background:salmon;
   padding: 15px;
@@ -60,6 +53,7 @@ h3 {
 form {
   margin-bottom: 10px;
   width: 100%;
+  color: white;
 }
 
 input {
@@ -69,7 +63,7 @@ input {
   box-sizing: border-box;
   outline: none;
   padding: 6px;
-  width: 100%;
+  width: 90%;
   margin-bottom: 5px;
 }
 
@@ -79,6 +73,10 @@ input:hover {
 
 input:focus {
   border-color: salmon;
+}
+
+#submit-handles {
+  width: 100%
 }
 
 #btn-text {
@@ -105,7 +103,7 @@ font-size: 9px;
 }
 
 a{
-  color: white;
+  color: yellow;
   text-decoration: none;
 }
 

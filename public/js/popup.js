@@ -1,9 +1,11 @@
 var storage = window.localStorage;
-var Promise = require('bluebird')
 
 $(document).ready(function () {
     var handle0 = storage.getItem('handle0');
     var handle1 = storage.getItem('handle1');
+
+    if (handle0) $('#handle0').attr('placeholder', handle0)
+    if (handle1) $('#handle1').attr('placeholder', handle1)
 
     $('form')
         .submit(function () {
@@ -13,6 +15,10 @@ $(document).ready(function () {
             if ($('#handle1').val()) {
                 var newHandle1 = $('#handle1').val().toLowerCase().trim();
                 storage.setItem('handle1', newHandle1);
-            }            
+            }
+
+            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                chrome.tabs.reload(tabs[0].id);
+            });
         })
 })

@@ -16,29 +16,32 @@ $(document).ready(function () {
     } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
+        
         $.getJSON(`https://www.instagram.com/${handle0}/?__a=1`, function (data) {
             var content = data.user.media.nodes;
-            var indexHolder = [];
-            for (var i = 0; i < 2; i++) {
+            var contentGroup = [];
 
-                var code = content[i].code;
+            for (var i = 0; i <= 1; i++) {
+                contentGroup.push(content[i])
+            }
+
+            contentGroup.forEach((media, index) => {
+                var code = media.code;
                 var igUrl = `https://www.instagram.com/p/${code}`;
                 var contentUrl = '';
-                indexHolder.push(i);
+                
+                console.log("url", igUrl)
 
-                if (content[i].is_video === true) {
+                if (media.is_video === true) {
                     $.getJSON(`https://www.instagram.com/p/${code}/?__a=1`, function (data) {
                         contentUrl = data.graphql.shortcode_media.video_url;
-                        $('#content' + indexHolder[0]).attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
-                        indexHolder.shift()
+                        $('#content' + index).attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
                     })
                 } else {
-                    contentUrl = content[i].thumbnail_src;
-                    $('#content' + i).attr('href', igUrl).append(`<img src = ${contentUrl}>`);
-                    indexHolder.shift()
+                    contentUrl = media.thumbnail_src;
+                    $('#content' + index).attr('href', igUrl).append(`<img src = ${contentUrl}>`);
                 }
-                
-            }
+            })   
         })
     } else {
         $('.intro-page').remove();
@@ -78,4 +81,8 @@ $(document).ready(function () {
             }
         })
     }
+
+    // add caption
+    $('#content0').append('')
+    
 })

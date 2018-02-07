@@ -31,25 +31,17 @@ div {
   float: right;
 }
 
-
-.grayscale img, .grayscale video {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
+.caption:hover img, .caption:hover video {
+  opacity: 0.5;
 }
 
-.grayscale:hover img, .grayscale:hover video {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-  
- .not-authenticated {
-     background-color:#2a2a2a;
+.not-authenticated {
+   background-color:#2a2a2a;
    align-items:center;
    display:flex;
  }
- .intro-page {
+
+.intro-page {
    background:salmon;
    border-width: 5px;
    border-radius: 20px;
