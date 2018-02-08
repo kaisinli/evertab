@@ -76,13 +76,20 @@ input:focus {
 }
 
 #submit-handles {
-  width: 100%
+  width: 100%;
 }
 
 #btn-text {
   float: right;
 }
 
+#todo-box-container {
+  font-size: 10px;
+}
+
+#todo-box {
+  width:10%;
+}
 
 p, #disclaimer {
   color: white;
@@ -95,11 +102,8 @@ br {
 }
 
 p{
-font-size: 9px;
-}
-
-#disclaimer {
   font-size: 9px;
+  margin-top: 5px;
 }
 
 a{

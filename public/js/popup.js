@@ -1,11 +1,12 @@
 var storage = window.localStorage;
 
 $(document).ready(function () {
+    
     var handle0 = storage.getItem('handle0');
     var handle1 = storage.getItem('handle1');
 
-    if (handle0) $('#handle0').attr('placeholder', handle0)
-    if (handle1) $('#handle1').attr('placeholder', handle1)
+    if (handle0) $('#handle0').attr('value', handle0)
+    if (handle1) $('#handle1').attr('value', handle1)
 
     $('form')
         .submit(function () {
