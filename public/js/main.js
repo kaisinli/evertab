@@ -4,8 +4,6 @@ var storage = window.localStorage;
 var handle0 = storage.getItem('handle0');
 var handle1 = storage.getItem('handle1');
 
-console.log(handle0, handle1)
-
 $(document).ready(function () {
     if (handle0 === null) {
         $('#div0').remove();
@@ -16,9 +14,9 @@ $(document).ready(function () {
     } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
-        
+
         $.getJSON(`https://www.instagram.com/${handle0}/?__a=1`, function (data) {
-            var content = data.user.media.nodes;
+            var content = data.graphql.user.edge_owner_to_timeline_media.edges
             var contentGroup = [];
 
             for (var i = 0; i <= 1; i++) {
@@ -26,57 +24,57 @@ $(document).ready(function () {
             }
 
             contentGroup.forEach((media, index) => {
-                var code = media.code;
-                var igUrl = `https://www.instagram.com/p/${code}`;
+                var code = media.node.display_url;
+                var display = media.node.shortcode;
+                var igUrl = `https://www.instagram.com/p/${display}/?taken-by=${handle0}`;
                 var contentUrl = '';
-                
-                console.log("url", igUrl)
 
-                if (media.is_video === true) {
-                    $.getJSON(`https://www.instagram.com/p/${code}/?__a=1`, function (data) {
+                console.log("url", display)
+
+                if (media.node.is_video === true) {
+                    $.getJSON(`https://www.instagram.com/p/${display}/?__a=1`, function (data) {
                         contentUrl = data.graphql.shortcode_media.video_url;
                         $('#content' + index).attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
                     })
                 } else {
-                    contentUrl = media.thumbnail_src;
-                    $('#content' + index).attr('href', igUrl).append(`<img src = ${contentUrl}>`);
+                    $('#content' + index).attr('href', igUrl).append(`<img src = ${code}>`);
                 }
-            })   
+            })
         })
     } else {
         $('.intro-page').remove();
         $('body').removeClass('not-authenticated');
 
         $.getJSON(`https://www.instagram.com/${handle0}/?__a=1`, function (data) {
-            var content = data.user.media.nodes;
-            var code = content[0].code;
-            var igUrl = `https://www.instagram.com/p/${code}`;
+            var content = data.graphql.user.edge_owner_to_timeline_media.edges;
+            var display = content[0].node.shortcode;
+            var igUrl = `https://www.instagram.com/p/${display}/?taken-by=${handle0}`;
             var contentUrl = ''
 
-            if (content[0].is_video === true) {
-                $.getJSON(`https://www.instagram.com/p/${code}/?__a=1`, function (data) {
+            if (content[0].node.is_video === true) {
+                $.getJSON(`https://www.instagram.com/p/${display}/?__a=1`, function (data) {
                     contentUrl = data.graphql.shortcode_media.video_url;
                     $('#content0').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
                 })
             } else {
-                contentUrl = content[0].thumbnail_src;
+                contentUrl = content[0].node.display_url;
                 $('#content0').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
             }
         })
 
         $.getJSON(`https://www.instagram.com/${handle1}/?__a=1`, function (data) {
-            var content = data.user.media.nodes;
-            var code = content[0].code;
-            var igUrl = `https://www.instagram.com/p/${code}`;
+            var content = data.graphql.user.edge_owner_to_timeline_media.edges;
+            var display = content[0].node.shortcode;
+            var igUrl = `https://www.instagram.com/p/${display}/?taken-by=${handle1}`;
             var contentUrl = ''
 
-            if (content[0].is_video === true) {
-                $.getJSON(`https://www.instagram.com/p/${code}/?__a=1`, function (data) {
+            if (content[0].node.is_video === true) {
+                $.getJSON(`https://www.instagram.com/p/${display}/?__a=1`, function (data) {
                     contentUrl = data.graphql.shortcode_media.video_url;
                     $('#content1').attr('href', igUrl).append(`<video autoplay loop muted><source src = ${contentUrl} type="video/mp4" ></video>`)
                 })
             } else {
-                contentUrl = content[0].thumbnail_src;
+                contentUrl = content[0].node.display_url;
                 $('#content1').attr('href', igUrl).append(`<img src = ${contentUrl}>`)
             }
         })
@@ -84,5 +82,5 @@ $(document).ready(function () {
 
     // add caption
     $('#content0').append('')
-    
+
 })
