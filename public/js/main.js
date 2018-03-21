@@ -13,12 +13,9 @@ $(document).ready(function () {
             .append('<div class="intro-page"><h1>Please click the Evertab icon to begin.</h1></div>');
     } else if (handle1 === null || handle1 === '' || handle1 === handle0) {
         $('.intro-page').remove();
-        $('body')
-            .removeClass('not-authenticated')
-            .addClass('loader');
+        $('body').removeClass('not-authenticated');
 
         $.getJSON(`https://www.instagram.com/${handle0}/?__a=1`, function (data) {
-            $('body').removeClass('loader')
             var content = data.graphql.user.edge_owner_to_timeline_media.edges
             var contentGroup = [];
 
